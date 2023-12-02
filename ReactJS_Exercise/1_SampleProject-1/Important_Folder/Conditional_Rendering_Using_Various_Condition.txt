@@ -1,0 +1,120 @@
+
+const ConditionalRendering = () => {
+    const status = false;
+//If-Else
+    //But it is not a suitable way. This requires more lines of code. So we have to avoid the if-else condition for conditional rendering
+    if(status == true){
+        return (
+            <div>
+                <h1>Login Status</h1>
+                <button>Logout</button>
+            </div>
+        );
+    }
+    else{
+        return (
+            <div>
+                <h1>Login Status</h1>
+                <button>Login</button>
+            </div>
+        );
+    }
+};
+
+export default ConditionalRendering;
+--------------------------------------------------------------
+const ConditionalRendering = () => {
+//If-Else
+    const LoginStatusBtn = (status)=>{
+        if(status){
+            return <button>Logout</button>
+        }
+        else{
+            return <button>Login</button>
+        }
+    }
+    return(
+        <div>
+            <h1>Login Status</h1>
+            {LoginStatusBtn(false)}
+        </div>
+    );   
+};
+-------------------------------------------------------
+
+const ConditionalRendering = () => {
+//Switch condition
+    let status = false;
+    switch(status){
+        case true:
+            return <button>Logout</button>
+        case false:
+            return <button>Login</button>
+        default:
+            return null
+    }  
+};
+
+export default ConditionalRendering;
+--------------------------------------------------
+
+
+const ConditionalRendering = () => {
+//ternary operator
+    let status = false
+    return(
+        <div>
+            {status==true ? <button>Logout</button> : <button>Login</button>}
+        </div>
+    ) ;
+};
+
+export default ConditionalRendering;
+-------------------------------------------------------
+const ConditionalRendering = () => {
+//Logical and(&&)
+    let status = true
+    return(
+        <div>
+            <h1>Login status</h1>
+            {status && <button>Logout</button>}
+        </div>
+    ) ;
+};
+
+export default ConditionalRendering;
+---------------------------------------------------------
+const ConditionalRendering = () => {
+//IIF function
+    let status = true
+    return(
+        <div>
+            <h1>Login status</h1>
+            {(()=>{
+               if(status==true){
+                return <button>Logout</button>
+               } 
+               else{
+                return <button>Login</button>
+               }
+            })()}
+        </div>
+    ) ;
+};
+
+export default ConditionalRendering;
+----------------------------------------------------
+const ConditionalRendering = () => {
+    let status = true
+    let btnLogOut = <button>Logout</button>
+    let btnLogIn = <button>Login</button>
+    return(
+        <div>
+            <h1>Login status</h1>
+            {status===true ? (btnLogOut) : (btnLogIn)}
+            
+        </div>
+    ) ;
+};
+
+export default ConditionalRendering;

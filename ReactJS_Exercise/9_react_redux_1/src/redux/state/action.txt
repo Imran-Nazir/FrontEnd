@@ -1,0 +1,1 @@
+eti ekta reducer type er foldar jeta action nia kaj korbe
