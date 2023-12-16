@@ -6,7 +6,7 @@ const TodoPage = () => {
             <div className='row'>
                 <div className='col-12'>
                     <div className='card'>
-                        <div className='card-header'>
+                        <div className='card-header '>
                             <h4>My Todo App</h4>
                         </div>
                         <div className='card-body'>
