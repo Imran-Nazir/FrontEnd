@@ -14,8 +14,11 @@ export const CounterSlice = createSlice({
         },
         setCustom: (state, action)=>{
             state.value = action.payload
+        },
+        reset:(state)=>{
+            state.value = 0
         }
     }
 })
-export const {increment, decrement, setCustom} = CounterSlice.actions;
+export const {increment, decrement, setCustom,reset} = CounterSlice.actions;
 export default CounterSlice.reducer;
