@@ -1,6 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { AlertDeleteTodo } from './AlertDeleteTodo';
+import { AlertEditTodo } from './AlertEditTodo';
 
 const TodoList = () => {
+
+    const todoItems = useSelector((state)=>state.todo.value);
+
     return (
         <div className="container-fluid">
             <div className="row">
@@ -15,12 +21,20 @@ const TodoList = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Name 1</td>
-                                <td><button className="btn btn-sm btn-warning">Edit</button></td>
-                                <td><button className="btn btn-sm btn-danger">Delete</button></td>
-                            </tr>
+                            {
+                                
+                                todoItems.map((item, index)=>{
+                                    return (
+                                        <tr key={index.toString()}>
+                                            <td>{index+1}</td>
+                                            <td>{item}</td>
+                                            <td><button onClick={()=>{AlertEditTodo(index, item)}} className="btn btn-sm btn-warning">Edit</button></td>
+                                            <td><button onClick={()=>{AlertDeleteTodo(index)}} className="btn btn-sm btn-danger">Delete</button></td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                            
                         </tbody>
                     </table>
                 </div>

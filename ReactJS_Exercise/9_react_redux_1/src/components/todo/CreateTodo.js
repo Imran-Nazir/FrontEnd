@@ -1,15 +1,28 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useRef, useState } from 'react';
+import { AddTodo } from '../../redux/state/todo/TodoSlice';
 
 const CreateTodo = () => {
+    const taskInput = useRef();
+    const dispatch = useDispatch();
+    const [initialState, setInitialState] = useState('');
+
     return (
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-md-10'>
-                    <input type='text' placeholder='Task Name' className='form-control'/>
+                    <input 
+                        ref={taskInput} 
+                        value={initialState} 
+                        onChange={(e)=>setInitialState(e.target.value)}
+                        type='text' 
+                        placeholder='Task Name' 
+                        className='form-control'/>
 
                 </div>
                 <div className='col-md-2'>
-                    <button className='btn btn-primary'>Add ToDo</button>
+                    <button onClick={()=>{dispatch(AddTodo(taskInput.current.value)); setInitialState('')}} type='btn' className='btn btn-primary'>Add ToDo</button>
                 </div>
 
             </div>
