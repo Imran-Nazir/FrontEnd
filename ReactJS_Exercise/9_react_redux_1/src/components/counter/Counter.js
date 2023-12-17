@@ -9,9 +9,9 @@ const Counter = () => {
     const dispatch = useDispatch();
     const [inputValue, setInputValue] = useState('');
 
-    // useEffect(()=>{
-    //     setInputValue('');
-    // }, [count])
+    useEffect(()=>{
+        setInputValue('');
+    }, [count])
 
     // const handleReset = ()=>{
     //     dispatch(reset());
