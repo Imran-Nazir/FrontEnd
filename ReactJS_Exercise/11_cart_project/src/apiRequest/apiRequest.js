@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { GetToken, SetEmail, ManageTokenExpire } from '../utility/TokenHelper';
+import { SetToken, GetToken, SetEmail, ManageTokenExpire } from '../utility/TokenHelper';
 const BASEURL = "https://cart-api.teamrabbil.com/api";
 
 export async function UserLoginRequest(postBody){

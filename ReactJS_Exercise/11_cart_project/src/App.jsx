@@ -4,14 +4,14 @@ import { GetToken } from './utility/TokenHelper';
 import ProductListPage from "./pages/ProductListPage"
 import CartListPage from "./pages/CartListPage"
 import OTPPage from "./pages/OTPPage"
-import LoginPage from "./pages/LoginPage"
+import UserLoginPage from './pages/UserLoginPage';
 
 const App = () => {
-  if(GetToken){
+  if(GetToken()){
     return (
       <BrowserRouter>
         <Routes>
-            <Route path="/home" element={<ProductListPage/>} />
+            <Route path="/" element={<ProductListPage/>} />
             <Route path="/cart" element={<CartListPage/>} />
         </Routes>
       </BrowserRouter>
@@ -22,7 +22,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<ProductListPage/>} />
-            <Route path="/login" element={<LoginPage/>} />
+            <Route path="/login" element={<UserLoginPage/>} />
             <Route path="/otp" element={<OTPPage/>} />
         </Routes> 
       </BrowserRouter>

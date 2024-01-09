@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartLIWST = () => {
+const CartList = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const CartLIWST = () => {
     );
 };
 
-export default CartLIWST;
+export default CartList;
